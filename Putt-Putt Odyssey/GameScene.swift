@@ -117,6 +117,12 @@ class GameScene: SKScene {
         if ball.frame.intersects(hole.frame) {
             // Handle win scenario
             print("You Win!")
+            let winLabel = SKLabelNode(fontNamed: "Chalkduster")
+                   winLabel.text = "Yayieeee you've done it!"
+                   winLabel.fontSize = 30
+                   winLabel.fontColor = SKColor.white
+                   winLabel.position = CGPoint(x: frame.midX, y: frame.midY)
+                   addChild(winLabel)
         }
     }
 }
