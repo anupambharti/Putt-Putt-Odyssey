@@ -140,7 +140,6 @@ class GameScene: SKScene {
     func checkForWin() {
         if ball.frame.intersects(hole.frame) {
             // Handle win scenario
-            print("You Win!")
             let winLabel = SKLabelNode(fontNamed: "Chalkduster")
                    winLabel.text = "Yayieeee you've done it!"
                    winLabel.fontSize = 30
