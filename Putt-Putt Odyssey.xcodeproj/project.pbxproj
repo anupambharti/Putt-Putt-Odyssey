@@ -15,6 +15,8 @@
 		F10345F02B1B7E920076C94A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10345EE2B1B7E920076C94A /* Main.storyboard */; };
 		F10345F22B1B7E970076C94A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F10345F12B1B7E970076C94A /* Assets.xcassets */; };
 		F10345F52B1B7E970076C94A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10345F32B1B7E970076C94A /* LaunchScreen.storyboard */; };
+		F10346202B1F993B0076C94A /* WelcomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103461F2B1F993B0076C94A /* WelcomeScene.swift */; };
+		F10346242B1F9A4C0076C94A /* WelcomeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F10346232B1F9A4C0076C94A /* WelcomeScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		F10345F12B1B7E970076C94A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F10345F42B1B7E970076C94A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F103461E2B1E38250076C94A /* Putt-Putt Odyssey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Putt-Putt Odyssey.entitlements"; sourceTree = "<group>"; };
+		F103461F2B1F993B0076C94A /* WelcomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScene.swift; sourceTree = "<group>"; };
+		F10346232B1F9A4C0076C94A /* WelcomeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WelcomeScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 		F10345E32B1B7E910076C94A /* Putt-Putt Odyssey */ = {
 			isa = PBXGroup;
 			children = (
+				F10346232B1F9A4C0076C94A /* WelcomeScene.sks */,
 				F103461E2B1E38250076C94A /* Putt-Putt Odyssey.entitlements */,
 				F10345E42B1B7E910076C94A /* AppDelegate.swift */,
 				F10345E62B1B7E920076C94A /* GameScene.sks */,
@@ -69,6 +74,7 @@
 				F10345EE2B1B7E920076C94A /* Main.storyboard */,
 				F10345F12B1B7E970076C94A /* Assets.xcassets */,
 				F10345F32B1B7E970076C94A /* LaunchScreen.storyboard */,
+				F103461F2B1F993B0076C94A /* WelcomeScene.swift */,
 			);
 			path = "Putt-Putt Odyssey";
 			sourceTree = "<group>";
@@ -135,6 +141,7 @@
 				F10345E72B1B7E920076C94A /* GameScene.sks in Resources */,
 				F10345F22B1B7E970076C94A /* Assets.xcassets in Resources */,
 				F10345F52B1B7E970076C94A /* LaunchScreen.storyboard in Resources */,
+				F10346242B1F9A4C0076C94A /* WelcomeScene.sks in Resources */,
 				F10345E92B1B7E920076C94A /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +156,7 @@
 				F10345EB2B1B7E920076C94A /* GameScene.swift in Sources */,
 				F10345ED2B1B7E920076C94A /* GameViewController.swift in Sources */,
 				F10345E52B1B7E910076C94A /* AppDelegate.swift in Sources */,
+				F10346202B1F993B0076C94A /* WelcomeScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
