@@ -64,7 +64,7 @@ class GameScene: SKScene {
         // Setup your scene here
         isUserInteractionEnabled = true
         physicsWorld.gravity = CGVector(dx: 0, dy: 0) // Adjust gravity as needed
-        backgroundColor = .green // Example background color
+        backgroundColor = .systemIndigo // Example background color
         // Set up the physics body for the scene
             self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
             self.physicsBody?.restitution = 0.5 // Adjust the restitution as needed
@@ -74,7 +74,7 @@ class GameScene: SKScene {
     
     func createGameElements() {
         // Create and position the ball
-        ball = SKSpriteNode(color: .white, size: CGSize(width: 30, height: 30))
+        ball = SKSpriteNode(color: .red, size: CGSize(width: 30, height: 30))
         ball.position = CGPoint(x: frame.midX, y: frame.midY)
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2)
         ball.physicsBody?.isDynamic = true
@@ -94,6 +94,21 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        let nodes = self.nodes(at: location)
+        
+        for node in nodes {
+            if node.name == "restartButton" {
+                // Code to restart the game
+                restartGame()
+                return
+            }
+        }
+        
+        
+        
         if let touch = touches.first {
             let touchLocation = touch.location(in: self)
             let dx = touchLocation.x - ball.position.x
@@ -103,8 +118,17 @@ class GameScene: SKScene {
             let vector = CGVector(dx: dx, dy: dy)
             ball.physicsBody?.applyImpulse(vector)
         }
+        
+        func restartGame() {
+            // Create a new scene or reset the current scene
+            if let scene = GameScene(fileNamed: "GameScene") {
+                scene.scaleMode = .aspectFill
+                view?.presentScene(scene, transition: SKTransition.fade(withDuration: 1.0))
+            }
+            
+        }
+        
     }
-
     
  
 
@@ -123,6 +147,24 @@ class GameScene: SKScene {
                    winLabel.fontColor = SKColor.white
                    winLabel.position = CGPoint(x: frame.midX, y: frame.midY)
                    addChild(winLabel)
+            
+            // Stop all game activity
+                    self.physicsWorld.speed = 0
+                    ball.physicsBody?.isDynamic = false
+
+                    // Optionally, present a button or label to restart or exit the game
+                    presentRestartOptions()
         }
     }
+    func presentRestartOptions() {
+        // Create a restart button or label
+        let restartLabel = SKLabelNode(fontNamed: "Chalkduster")
+        restartLabel.text = "Restart"
+        restartLabel.fontSize = 25
+        restartLabel.fontColor = SKColor.blue
+        restartLabel.position = CGPoint(x: frame.midX, y: frame.midY - 50)
+        restartLabel.name = "restartButton" // Set a name to identify it in touchesBegan method
+        addChild(restartLabel)
+    }
+
 }
