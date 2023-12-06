@@ -17,6 +17,10 @@
 		F10345F52B1B7E970076C94A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F10345F32B1B7E970076C94A /* LaunchScreen.storyboard */; };
 		F10346202B1F993B0076C94A /* WelcomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F103461F2B1F993B0076C94A /* WelcomeScene.swift */; };
 		F10346242B1F9A4C0076C94A /* WelcomeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F10346232B1F9A4C0076C94A /* WelcomeScene.sks */; };
+		F10346262B209B3C0076C94A /* LevelTwoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F10346252B209B3C0076C94A /* LevelTwoScene.sks */; };
+		F10346282B209B5C0076C94A /* LevelTwoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10346272B209B5C0076C94A /* LevelTwoScene.swift */; };
+		F103462A2B20EF470076C94A /* LevelThreeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10346292B20EF460076C94A /* LevelThreeScene.swift */; };
+		F103462C2B20EF590076C94A /* LevelThreeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F103462B2B20EF590076C94A /* LevelThreeScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		F103461E2B1E38250076C94A /* Putt-Putt Odyssey.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Putt-Putt Odyssey.entitlements"; sourceTree = "<group>"; };
 		F103461F2B1F993B0076C94A /* WelcomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScene.swift; sourceTree = "<group>"; };
 		F10346232B1F9A4C0076C94A /* WelcomeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WelcomeScene.sks; sourceTree = "<group>"; };
+		F10346252B209B3C0076C94A /* LevelTwoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelTwoScene.sks; sourceTree = "<group>"; };
+		F10346272B209B5C0076C94A /* LevelTwoScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoScene.swift; sourceTree = "<group>"; };
+		F10346292B20EF460076C94A /* LevelThreeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThreeScene.swift; sourceTree = "<group>"; };
+		F103462B2B20EF590076C94A /* LevelThreeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelThreeScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 		F10345E32B1B7E910076C94A /* Putt-Putt Odyssey */ = {
 			isa = PBXGroup;
 			children = (
+				F10346292B20EF460076C94A /* LevelThreeScene.swift */,
 				F10346232B1F9A4C0076C94A /* WelcomeScene.sks */,
 				F103461E2B1E38250076C94A /* Putt-Putt Odyssey.entitlements */,
 				F10345E42B1B7E910076C94A /* AppDelegate.swift */,
@@ -75,6 +84,9 @@
 				F10345F12B1B7E970076C94A /* Assets.xcassets */,
 				F10345F32B1B7E970076C94A /* LaunchScreen.storyboard */,
 				F103461F2B1F993B0076C94A /* WelcomeScene.swift */,
+				F10346252B209B3C0076C94A /* LevelTwoScene.sks */,
+				F10346272B209B5C0076C94A /* LevelTwoScene.swift */,
+				F103462B2B20EF590076C94A /* LevelThreeScene.sks */,
 			);
 			path = "Putt-Putt Odyssey";
 			sourceTree = "<group>";
@@ -137,6 +149,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F103462C2B20EF590076C94A /* LevelThreeScene.sks in Resources */,
+				F10346262B209B3C0076C94A /* LevelTwoScene.sks in Resources */,
 				F10345F02B1B7E920076C94A /* Main.storyboard in Resources */,
 				F10345E72B1B7E920076C94A /* GameScene.sks in Resources */,
 				F10345F22B1B7E970076C94A /* Assets.xcassets in Resources */,
@@ -155,7 +169,9 @@
 			files = (
 				F10345EB2B1B7E920076C94A /* GameScene.swift in Sources */,
 				F10345ED2B1B7E920076C94A /* GameViewController.swift in Sources */,
+				F103462A2B20EF470076C94A /* LevelThreeScene.swift in Sources */,
 				F10345E52B1B7E910076C94A /* AppDelegate.swift in Sources */,
+				F10346282B209B5C0076C94A /* LevelTwoScene.swift in Sources */,
 				F10346202B1F993B0076C94A /* WelcomeScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Putt-Putt Odyssey/Putt-Putt Odyssey.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 9V2V87D3HV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Fairway Saga";
@@ -338,7 +354,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Putt-Putt Odyssey/Putt-Putt Odyssey.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 9V2V87D3HV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Fairway Saga";

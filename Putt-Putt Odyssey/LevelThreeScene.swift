@@ -1,27 +1,68 @@
 //
-//  GameScene.swift
+//  LevelThreeScene.swift
 //  Putt-Putt Odyssey
 //
-//  Created by Anu on 02/12/23.
+//  Created by Anu on 06/12/23.
 //
+
+import Foundation
+
 
 import SpriteKit
 
-class GameScene: SKScene {
+class LevelThreeScene: SKScene {
     
     var ball: SKSpriteNode!
     var hole: SKSpriteNode!
+    var obstacles: [SKSpriteNode] = []
+    var collectibles: [SKSpriteNode] = []
+
     
     override func didMove(to view: SKView) {
+        
+        // Create a more complex layout
+               createComplexLayout()
+
+               // Add obstacles
+                addMovingObstacle()
+
+               // Add collectibles or power-ups
+               addCollectibles()
+
+        
         // Setup your scene here
         isUserInteractionEnabled = true
         physicsWorld.gravity = CGVector(dx: 0, dy: 0) // Adjust gravity as needed
-        backgroundColor = .white // Example background color
+        backgroundColor = .white// Example background color
         // Set up the physics body for the scene
             self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
             self.physicsBody?.restitution = 0.5 // Adjust the restitution as needed
             self.physicsBody?.friction = 0.5 // Adjust the friction as needed
         createGameElements()
+    }
+    
+    func createComplexLayout() {
+        // Define the layout for Level 2, including multiple holes or targets
+    }
+
+    func addMovingObstacle() {
+        let movingObstacle = SKSpriteNode(color: .gray, size: CGSize(width: 200, height: 20))
+        movingObstacle.position = CGPoint(x: frame.minX, y: frame.midY + 100)
+        movingObstacle.physicsBody = SKPhysicsBody(rectangleOf: movingObstacle.size)
+        movingObstacle.physicsBody?.isDynamic = false
+
+        let moveRight = SKAction.move(to: CGPoint(x: frame.maxX, y: movingObstacle.position.y), duration: 4.0)
+        let moveLeft = SKAction.move(to: CGPoint(x: frame.minX, y: movingObstacle.position.y), duration: 4.0)
+        let moveSequence = SKAction.sequence([moveRight, moveLeft])
+        let moveForever = SKAction.repeatForever(moveSequence)
+
+        movingObstacle.run(moveForever)
+        addChild(movingObstacle)
+    }
+
+
+    func addCollectibles() {
+        // Create and position collectibles or power-ups
     }
     
     func createGameElements() {
@@ -109,7 +150,7 @@ class GameScene: SKScene {
             let winLabel = SKLabelNode(fontNamed: "Chalkduster")
                    winLabel.text = "Yayieeee you've done it!"
                    winLabel.fontSize = 30
-                   winLabel.fontColor = SKColor.blue
+                   winLabel.fontColor = SKColor.white
                    winLabel.position = CGPoint(x: frame.midX, y: frame.midY)
                    addChild(winLabel)
             

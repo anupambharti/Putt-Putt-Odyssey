@@ -1,27 +1,71 @@
 //
-//  GameScene.swift
+//  LevelTwoScene.swift
 //  Putt-Putt Odyssey
 //
-//  Created by Anu on 02/12/23.
+//  Created by Anu on 06/12/23.
 //
 
 import SpriteKit
 
-class GameScene: SKScene {
+class LevelTwoScene: SKScene {
     
     var ball: SKSpriteNode!
     var hole: SKSpriteNode!
+    var obstacles: [SKSpriteNode] = []
+    var collectibles: [SKSpriteNode] = []
+
     
     override func didMove(to view: SKView) {
+        
+        // Create a more complex layout
+               createComplexLayout()
+
+               // Add obstacles
+               addObstacles()
+
+               // Add collectibles or power-ups
+               addCollectibles()
+
+        
         // Setup your scene here
         isUserInteractionEnabled = true
         physicsWorld.gravity = CGVector(dx: 0, dy: 0) // Adjust gravity as needed
-        backgroundColor = .white // Example background color
+        backgroundColor = .white// Example background color
         // Set up the physics body for the scene
             self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
             self.physicsBody?.restitution = 0.5 // Adjust the restitution as needed
             self.physicsBody?.friction = 0.5 // Adjust the friction as needed
         createGameElements()
+    }
+    
+    func createComplexLayout() {
+        // Define the layout for Level 2, including multiple holes or targets
+    }
+
+    func addObstacles() {
+        // Create and position obstacles in the scene
+        let obstacle1 = SKSpriteNode(color: .gray, size: CGSize(width: 100, height: 20))
+            obstacle1.position = CGPoint(x: frame.midX, y: frame.midY + 100)
+            obstacle1.physicsBody = SKPhysicsBody(rectangleOf: obstacle1.size)
+            obstacle1.physicsBody?.isDynamic = false // Makes the obstacle static
+            addChild(obstacle1)
+
+            let obstacle2 = SKSpriteNode(color: .gray, size: CGSize(width: 20, height: 100))
+            obstacle2.position = CGPoint(x: frame.midX - 150, y: frame.midY)
+            obstacle2.physicsBody = SKPhysicsBody(rectangleOf: obstacle2.size)
+            obstacle2.physicsBody?.isDynamic = false
+            addChild(obstacle2)
+        
+            let obstacle3 = SKSpriteNode(color: .gray, size: CGSize(width: 20, height: 100))
+            obstacle3.position = CGPoint(x: frame.midX + 150, y: frame.midY)
+            obstacle3.physicsBody = SKPhysicsBody(rectangleOf: obstacle3.size)
+            obstacle3.physicsBody?.isDynamic = false
+            addChild(obstacle3)
+
+    }
+
+    func addCollectibles() {
+        // Create and position collectibles or power-ups
     }
     
     func createGameElements() {
@@ -58,19 +102,19 @@ class GameScene: SKScene {
                 return
             }
             
-            else if node.name == "levelTwoButton" {
-                            startLevelTwo()
+            else if node.name == "levelThreeButton" {
+                            startLevelThree()
                             return
                         }
         }
         
         
-        func startLevelTwo() {
-            // Logic to start level 2
+        func startLevelThree() {
+            // Logic to start level 3
             // For example, loading a new scene for level 2
-            if let levelTwoScene = LevelTwoScene(fileNamed: "LevelTwoScene") {
-                levelTwoScene.scaleMode = .aspectFill
-                view?.presentScene(levelTwoScene, transition: SKTransition.fade(withDuration: 1.0))
+            if let levelThreeScene = LevelThreeScene(fileNamed: "LevelThreeScene") {
+                levelThreeScene.scaleMode = .aspectFill
+                view?.presentScene(levelThreeScene, transition: SKTransition.fade(withDuration: 1.0))
             }
         }
         
@@ -109,7 +153,7 @@ class GameScene: SKScene {
             let winLabel = SKLabelNode(fontNamed: "Chalkduster")
                    winLabel.text = "Yayieeee you've done it!"
                    winLabel.fontSize = 30
-                   winLabel.fontColor = SKColor.blue
+                   winLabel.fontColor = SKColor.white
                    winLabel.position = CGPoint(x: frame.midX, y: frame.midY)
                    addChild(winLabel)
             
@@ -135,14 +179,14 @@ class GameScene: SKScene {
     }
     
     func presentLevelTwoOptions() {
-           // Create a "Level 2" button
-           let levelTwoButton = SKLabelNode(fontNamed: "Chalkduster")
-           levelTwoButton.text = "Level 2"
-           levelTwoButton.fontSize = 25
-           levelTwoButton.fontColor = SKColor.blue
-           levelTwoButton.position = CGPoint(x: frame.midX, y: frame.midY - 100)
-           levelTwoButton.name = "levelTwoButton"
-           addChild(levelTwoButton)
+           // Create a "Level 3" button
+           let levelThreeButton = SKLabelNode(fontNamed: "Chalkduster")
+           levelThreeButton.text = "Level 3"
+           levelThreeButton.fontSize = 25
+           levelThreeButton.fontColor = SKColor.blue
+           levelThreeButton.position = CGPoint(x: frame.midX, y: frame.midY - 100)
+           levelThreeButton.name = "levelThreeButton"
+           addChild(levelThreeButton)
        }
 
 }
