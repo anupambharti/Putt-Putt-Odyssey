@@ -14,13 +14,13 @@ class WelcomeScene: SKScene {
     var startGameButton: SKLabelNode!
 
     override func didMove(to view: SKView) {
-        backgroundColor = .white
+        backgroundColor = GameConfiguration.backgroundColor
 
         // Setup Welcome Message
         let welcomeLabel = SKLabelNode(fontNamed: "Chalkduster")
         welcomeLabel.text = "Fairway Saga"
         welcomeLabel.fontSize = 40
-        welcomeLabel.fontColor = SKColor.blue
+        welcomeLabel.fontColor = GameConfiguration.textColor
         welcomeLabel.position = CGPoint(x: frame.midX, y: frame.midY + 100)
         addChild(welcomeLabel)
 
@@ -28,7 +28,7 @@ class WelcomeScene: SKScene {
         startGameButton = SKLabelNode(fontNamed: "Chalkduster")
         startGameButton.text = "BEGIN"
         startGameButton.fontSize = 30
-        startGameButton.fontColor = SKColor.blue
+        startGameButton.fontColor = GameConfiguration.textColor2
         startGameButton.position = CGPoint(x: frame.midX, y: frame.midY - 100)
         startGameButton.name = "startGameButton"
         addChild(startGameButton)

@@ -30,7 +30,7 @@ class LevelTwoScene: SKScene {
         // Setup your scene here
         isUserInteractionEnabled = true
         physicsWorld.gravity = CGVector(dx: 0, dy: 0) // Adjust gravity as needed
-        backgroundColor = .white// Example background color
+        backgroundColor = GameConfiguration.backgroundColor
         // Set up the physics body for the scene
             self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
             self.physicsBody?.restitution = 0.5 // Adjust the restitution as needed
@@ -44,19 +44,19 @@ class LevelTwoScene: SKScene {
 
     func addObstacles() {
         // Create and position obstacles in the scene
-        let obstacle1 = SKSpriteNode(color: .gray, size: CGSize(width: 100, height: 20))
+        let obstacle1 = SKSpriteNode(color: GameConfiguration.obstructionColor, size: CGSize(width: 100, height: 20))
             obstacle1.position = CGPoint(x: frame.midX, y: frame.midY + 100)
             obstacle1.physicsBody = SKPhysicsBody(rectangleOf: obstacle1.size)
             obstacle1.physicsBody?.isDynamic = false // Makes the obstacle static
             addChild(obstacle1)
 
-            let obstacle2 = SKSpriteNode(color: .gray, size: CGSize(width: 20, height: 100))
+            let obstacle2 = SKSpriteNode(color: GameConfiguration.obstructionColor, size: CGSize(width: 20, height: 100))
             obstacle2.position = CGPoint(x: frame.midX - 150, y: frame.midY)
             obstacle2.physicsBody = SKPhysicsBody(rectangleOf: obstacle2.size)
             obstacle2.physicsBody?.isDynamic = false
             addChild(obstacle2)
         
-            let obstacle3 = SKSpriteNode(color: .gray, size: CGSize(width: 20, height: 100))
+            let obstacle3 = SKSpriteNode(color:  GameConfiguration.obstructionColor, size: CGSize(width: 20, height: 100))
             obstacle3.position = CGPoint(x: frame.midX + 150, y: frame.midY)
             obstacle3.physicsBody = SKPhysicsBody(rectangleOf: obstacle3.size)
             obstacle3.physicsBody?.isDynamic = false
@@ -70,7 +70,7 @@ class LevelTwoScene: SKScene {
     
     func createGameElements() {
         // Create and position the ball
-        ball = SKSpriteNode(color: .red, size: CGSize(width: 30, height: 30))
+        ball = SKSpriteNode(color: GameConfiguration.ballColor, size: CGSize(width: 30, height: 30))
         ball.position = CGPoint(x: frame.midX, y: frame.midY)
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2)
         ball.physicsBody?.isDynamic = true
@@ -153,7 +153,7 @@ class LevelTwoScene: SKScene {
             let winLabel = SKLabelNode(fontNamed: "Chalkduster")
                    winLabel.text = "Yayieeee you've done it!"
                    winLabel.fontSize = 30
-                   winLabel.fontColor = SKColor.white
+            winLabel.fontColor = GameConfiguration.textColor
                    winLabel.position = CGPoint(x: frame.midX, y: frame.midY)
                    addChild(winLabel)
             
@@ -172,7 +172,7 @@ class LevelTwoScene: SKScene {
         let restartLabel = SKLabelNode(fontNamed: "Chalkduster")
         restartLabel.text = "Restart"
         restartLabel.fontSize = 25
-        restartLabel.fontColor = SKColor.blue
+        restartLabel.fontColor = GameConfiguration.textColor2
         restartLabel.position = CGPoint(x: frame.midX, y: frame.midY - 50)
         restartLabel.name = "restartButton" // Set a name to identify it in touchesBegan method
         addChild(restartLabel)
@@ -183,7 +183,7 @@ class LevelTwoScene: SKScene {
            let levelThreeButton = SKLabelNode(fontNamed: "Chalkduster")
            levelThreeButton.text = "Level 3"
            levelThreeButton.fontSize = 25
-           levelThreeButton.fontColor = SKColor.blue
+           levelThreeButton.fontColor = GameConfiguration.textColor2
            levelThreeButton.position = CGPoint(x: frame.midX, y: frame.midY - 100)
            levelThreeButton.name = "levelThreeButton"
            addChild(levelThreeButton)

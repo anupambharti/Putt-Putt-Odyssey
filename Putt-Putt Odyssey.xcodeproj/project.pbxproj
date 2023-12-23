@@ -21,6 +21,7 @@
 		F10346282B209B5C0076C94A /* LevelTwoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10346272B209B5C0076C94A /* LevelTwoScene.swift */; };
 		F103462A2B20EF470076C94A /* LevelThreeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10346292B20EF460076C94A /* LevelThreeScene.swift */; };
 		F103462C2B20EF590076C94A /* LevelThreeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F103462B2B20EF590076C94A /* LevelThreeScene.sks */; };
+		F110BEB82B28E7E400517C43 /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110BEB72B28E7E400517C43 /* GameConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		F10346272B209B5C0076C94A /* LevelTwoScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTwoScene.swift; sourceTree = "<group>"; };
 		F10346292B20EF460076C94A /* LevelThreeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelThreeScene.swift; sourceTree = "<group>"; };
 		F103462B2B20EF590076C94A /* LevelThreeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LevelThreeScene.sks; sourceTree = "<group>"; };
+		F110BEB72B28E7E400517C43 /* GameConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				F10346252B209B3C0076C94A /* LevelTwoScene.sks */,
 				F10346272B209B5C0076C94A /* LevelTwoScene.swift */,
 				F103462B2B20EF590076C94A /* LevelThreeScene.sks */,
+				F110BEB72B28E7E400517C43 /* GameConfiguration.swift */,
 			);
 			path = "Putt-Putt Odyssey";
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F10345EB2B1B7E920076C94A /* GameScene.swift in Sources */,
+				F110BEB82B28E7E400517C43 /* GameConfiguration.swift in Sources */,
 				F10345ED2B1B7E920076C94A /* GameViewController.swift in Sources */,
 				F103462A2B20EF470076C94A /* LevelThreeScene.swift in Sources */,
 				F10345E52B1B7E910076C94A /* AppDelegate.swift in Sources */,
@@ -324,7 +328,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Putt-Putt Odyssey/Putt-Putt Odyssey.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 9V2V87D3HV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Fairway Saga";
@@ -354,7 +358,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Putt-Putt Odyssey/Putt-Putt Odyssey.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 9V2V87D3HV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Fairway Saga";

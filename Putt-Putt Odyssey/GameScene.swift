@@ -16,7 +16,7 @@ class GameScene: SKScene {
         // Setup your scene here
         isUserInteractionEnabled = true
         physicsWorld.gravity = CGVector(dx: 0, dy: 0) // Adjust gravity as needed
-        backgroundColor = .white // Example background color
+        backgroundColor = GameConfiguration.backgroundColor
         // Set up the physics body for the scene
             self.physicsBody = SKPhysicsBody(edgeLoopFrom: self.frame)
             self.physicsBody?.restitution = 0.5 // Adjust the restitution as needed
@@ -26,7 +26,7 @@ class GameScene: SKScene {
     
     func createGameElements() {
         // Create and position the ball
-        ball = SKSpriteNode(color: .red, size: CGSize(width: 30, height: 30))
+        ball = SKSpriteNode(color: GameConfiguration.ballColor, size: CGSize(width: 30, height: 30))
         ball.position = CGPoint(x: frame.midX, y: frame.midY)
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2)
         ball.physicsBody?.isDynamic = true
@@ -109,7 +109,7 @@ class GameScene: SKScene {
             let winLabel = SKLabelNode(fontNamed: "Chalkduster")
                    winLabel.text = "Yayieeee you've done it!"
                    winLabel.fontSize = 30
-                   winLabel.fontColor = SKColor.blue
+                   winLabel.fontColor = GameConfiguration.textColor
                    winLabel.position = CGPoint(x: frame.midX, y: frame.midY)
                    addChild(winLabel)
             
@@ -128,7 +128,7 @@ class GameScene: SKScene {
         let restartLabel = SKLabelNode(fontNamed: "Chalkduster")
         restartLabel.text = "Restart"
         restartLabel.fontSize = 25
-        restartLabel.fontColor = SKColor.blue
+        restartLabel.fontColor = GameConfiguration.textColor2
         restartLabel.position = CGPoint(x: frame.midX, y: frame.midY - 50)
         restartLabel.name = "restartButton" // Set a name to identify it in touchesBegan method
         addChild(restartLabel)
@@ -139,7 +139,7 @@ class GameScene: SKScene {
            let levelTwoButton = SKLabelNode(fontNamed: "Chalkduster")
            levelTwoButton.text = "Level 2"
            levelTwoButton.fontSize = 25
-           levelTwoButton.fontColor = SKColor.blue
+           levelTwoButton.fontColor = GameConfiguration.textColor2
            levelTwoButton.position = CGPoint(x: frame.midX, y: frame.midY - 100)
            levelTwoButton.name = "levelTwoButton"
            addChild(levelTwoButton)
